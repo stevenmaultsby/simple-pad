@@ -1,0 +1,41 @@
+.plugin-app {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 0;
+  width: 360px;
+  z-index: 10000;
+  /* background-color: rgb(224, 239, 240); */
+  overflow-y: auto;
+  &.plugin-dev {
+    right: 0;
+    width: 100%;
+  }
+}
+
+.button {
+  position: relative;
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 400;
+  font-size: 90%;
+  background: #7b9166;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  background: #3e6ae1;
+  color: aliceblue;
+  font-weight: 700;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background: #2d2e2e;
+  transform: none;
+}
