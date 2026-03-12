@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "commented",
+  "version": "0.1",
+  "icons": {
+    "32": "icons/icon32.png"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://*/*", "http://*/*"],
+  "action": {
+    "default_icon": "icons/icon64.png",
+    "default_title": "commented",
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "type": "module"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "test.js",
+        "webpage_addon/js/main.js",
+        "webpage_addon/css/main.css"
+      ],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
